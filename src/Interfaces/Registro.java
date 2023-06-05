@@ -63,6 +63,7 @@ public class Registro extends JFrame{
     private JTextArea textArea2;
     private JButton imprimirButton;
     private JComboBox comboimpresion;
+    private JButton btnQuemarDatos;
     private Validacion v1;
     private Modelo m1;
     private Empresa empresa;
@@ -268,6 +269,13 @@ public Registro(String title) {
         @Override
         public void actionPerformed(ActionEvent e) {
             textArea2.setText(nomina.imprimirNominaporMes(comboimpresion.getSelectedIndex()+1));
+        }
+    });
+    btnQuemarDatos.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            nomina.addEmpleado(new Empleado("Camila","Cabrera","1711512663","camilcacabrera@gmail.com","A001234",500,1));
+            nomina.addEmpleado(new Empleado("Rodrigo","Cabrera","1750473942","rodrigocabrera@gmail.com","A002525",800,2));
         }
     });
 }
